@@ -1,5 +1,0 @@
-def get_input(filename: str) -> list:
-  with open(filename) as input :
-      input_list = input.read().strip().split("\n")
-      input_list=list(map(int,input_list))
-      return input_list
