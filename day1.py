@@ -13,7 +13,6 @@ def firststar(puzzle: list) -> int:
   while x < ln:
     if puzzle[x] > puzzle[x-1] :
       icr +=1
-      print(x, end=";") ; print(puzzle[x], end=";") ; print(puzzle[x-1], end=";") ; print(icr)
     x +=1
   return icr
 
