@@ -29,3 +29,33 @@ def fifthstar(puzzle : list):
     return g*e
   
 fifthstar(day3puzzle)
+
+def sixthstar(puzzle : list) -> int:
+  bits=[[n[i:i+1] for i in range(0,len(n),1)] for n in puzzle]
+  lno2 = len(bits)
+  lnco2 = len(bits)
+  x, y = 0, 0
+  bo2, bco2 = bits, bits
+  while lno2 > 1: 
+    try :
+      modeo2 = mode(int(bo2[i][x]) for i in range(lno2))
+    except :
+      modeo2 = 1
+    bo2 = [i for i in bo2 if int(i[x])== modeo2]
+    lno2 = len(bo2)
+    x += 1
+  while lnco2 > 1:
+    try :
+      modeco2 = abs(mode(int(bco2[i][y]) for i in range(lnco2))-1)
+    except :
+      modeco2 = 0
+    bco2 = [i for i in bco2 if int(i[y])== modeco2]
+    lnco2 = len(bco2)
+    y += 1
+  o2, co2 = '', ''
+  for n in bo2[0]:o2 +=str(n)
+  for n in bco2[0]:co2 +=str(n)
+  o2, co2 = int(o2,2), int(co2,2)
+  return o2*co2
+
+sixthstar(day3puzzle)
